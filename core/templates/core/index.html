@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+{% load static %}
+<main class="flex-fill">
+    <div class="row">
+        <div class="col-12">
+            <h2>Inicio</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Voluptatum error quisquam dolorum velit id, iste, hic laborum 
+                laboriosam quibusdam aliquid recusandae eveniet sapiente veritatis 
+                ratione ea saepe aperiam officiis rem.
+            </p>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-12">
+            <section>
+                <h3>Integrantes</h3>
+                <ul>
+                    <li>Cristian Savaria</li>
+                    <li>Daniela Errazuriz</li>
+                    <li>Cristian Savaria</li>
+                </ul>
+            </section>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-12">
+            <section>
+                <h3>Mascotas</h3>
+            </section>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-6 text-center">
+            <a href="{% url 'seccion-perros' %}" title="Perros">
+                <img src="{% static 'core/img/seccion-perros.jpg' %}" title="Perros" alt="Perros" class="rounded-circle img-thumbnail" width="250"  />
+            </a>
+        </div>
+        <div class="col-6 text-center">
+            <a href="{% url 'seccion-gatos' %}" title="Gatos">
+                <img src="{% static 'core/img/seccion-gatos.jpeg' %}" title="Gatos" alt="Gatos"  class="rounded-circle img-thumbnail" width="250"/>
+            </a>
+        </div>
+    </div>        
+</main>
+
+
+{% endblock %}

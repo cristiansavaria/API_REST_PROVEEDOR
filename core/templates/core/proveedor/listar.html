@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+
+{% block js %}
+
+<script>
+    function eliminarProveedor(rut) {
+        Swal.fire({
+
+            "title": "¿Estas Seguro?",
+            "text": "Si eliminas el proveedor, No podras volver atras",
+            "icon": "question",
+            "showCancelButton": true,
+            "cancelButtonText": "No, Cancelar",
+            "confirmButtonText": "Si, Eliminar",
+            "confirmButtonColor": "darkred",
+
+        })
+        .then(function(result) {
+            if(result.isConfirmed){
+                window.location.href = "/eliminar-proveedor/"+rut+"/"
+            }
+        })
+    }
+</script>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+<table class="table table-striped table-hover table-responsive-sm">
+    <tr>
+        <h2>Proveedores</h2>
+        <th>RUT</th>
+        <th>RAZÓN SOCIAL</th>
+        <th>DESCRIPCIÓN</th>
+        <th>SERVICIO</th>
+        <th>OPERACIÓN</th>
+
+    </tr>
+
+
+    {% for p in proveedor %}
+
+    <tr>
+
+        <th>{{ p.rut | title }}</th>
+        <th>{{ p.razonSocial | title }}</th>
+        <th>{{ p.descripcion | title }}</th>
+        <th>{{ p.tipoServicio | title }}</th>
+
+        <td>
+            <a href="{% url 'modificar-proveedor' p.rut %}">Modificar</a>
+            <a href="#" onclick="eliminarProveedor({{ p.rut }})">Eliminar</a>
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+<a href="{% url 'agregar-proveedor'%}" class="btn float-right btn-info">Agregar Proveedor</a>
+{% endblock %}
