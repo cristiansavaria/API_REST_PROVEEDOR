@@ -11,6 +11,15 @@ class ProveedorViewset(viewsets.ModelViewSet):
     queryset = Proveedor.objects.all()
     serializer_class = ProveedorSerializer
 
+    def get_queryset(self):
+        proveedor = Proveedor.objects.all()
+
+        rut = self.request.GET.get('rut')
+
+        if rut:
+            proveedor = proveedor.filter(rut__contains=rut)
+
+        return proveedor    
 
 
 

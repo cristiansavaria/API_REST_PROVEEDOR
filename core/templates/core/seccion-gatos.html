@@ -2,7 +2,13 @@
 {% extends 'core/base.html' %}
 {% block contenido %}
 {% load static %}
+{% block jss %}
 
+<script src="{% static 'core/js/seccion-gatos.js' %}"></script>
+<script src="{% static 'core/js/galeria-imagenes.js' %}"></script>
+
+
+{% endblock %}
 <main class="flex-fill">            
     <div class="row">
         <div class="col-12">
