@@ -2,8 +2,19 @@ from django.shortcuts import render , redirect, get_object_or_404
 from .models import Proveedor
 from.forms import ProveedorForm
 from django.contrib import messages
+from rest_framework import serializers, viewsets
+from .serializers import ProveedorSerializer
 
 # Create your views here.
+
+class ProveedorViewset(viewsets.ModelViewSet):
+    queryset = Proveedor.objects.all()
+    serializer_class = ProveedorSerializer
+
+
+
+
+
 def index(request):
     return render(request, 'core/index.html')
 def contacto(request):
