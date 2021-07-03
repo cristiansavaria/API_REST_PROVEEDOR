@@ -6,7 +6,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register('proveedor', ProveedorViewset)
 
-#localhost:8000/api/proveedor  carga la api
+#localhost:8000/api/proveedor  carga la api GET Y POST AGREGA PROVEEDOR DE MANERA EXITOSA
 
 urlpatterns = [
 
