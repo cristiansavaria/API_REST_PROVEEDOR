@@ -1,0 +1,31 @@
+
+{% extends 'core/base.html' %}
+{% block contenido %}
+{% load static %}
+{% block jss %}
+
+<script src="{% static 'core/js/proveedor.js' %}"></script>
+
+
+
+{% endblock %}
+<main class="flex-fill">            
+    <div class="row">
+        <div class="col-12">
+            <section>
+                <h2>
+                    Proveedores
+                </h2> 
+                
+                <table  id="lista-proveedor" class="table text-center">
+                    
+                </table>
+            </section>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+

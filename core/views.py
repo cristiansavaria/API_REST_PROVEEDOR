@@ -5,8 +5,10 @@ from.forms import ProveedorForm
 from django.contrib import messages
 from rest_framework import serializers, viewsets
 from .serializers import ProveedorSerializer
+from rest_framework.decorators import api_view,permission_classes
 
-
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class ProveedorViewset(viewsets.ModelViewSet):
@@ -22,6 +24,12 @@ class ProveedorViewset(viewsets.ModelViewSet):
             proveedor = proveedor.filter(rut__contains=rut)
 
         return proveedor    
+
+
+
+
+
+
 
 
 
