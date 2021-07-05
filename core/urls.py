@@ -3,6 +3,7 @@ from .views import index, contacto, seccion_gatos, seccion_perros, formulario_en
 from .views import contacto
 from rest_framework import routers
 
+
 router = routers.DefaultRouter()
 router.register('proveedor', ProveedorViewset)
 
@@ -20,5 +21,6 @@ urlpatterns = [
     path('modificar-proveedor/<rut>/', modificar_proveedor, name="modificar-proveedor"),
     path('eliminar-proveedor/<rut>/', eliminar_proveedor, name="eliminar-proveedor"),
     path('api/', include(router.urls)),
+    
 
 ]
