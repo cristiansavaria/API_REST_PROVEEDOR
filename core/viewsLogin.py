@@ -7,7 +7,7 @@ from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 
  
-@api_view(['POST'])
+@api_view(['GET','POST'])
 def login(request):
     data = JSONParser().parse(request)
 
